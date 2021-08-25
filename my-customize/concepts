@@ -1,0 +1,13 @@
+Terminal:
+    -NeoVim(???):
+    -Alacritty(alacritty.yml):
+    -Zsh(/etc/.zshrc; ~/.zshrc):
+    -Powerlevel10K(~/powerlevel10K/powerlevel10K.zsh-theme; ~/.p10k.zsh):
+Polybar:
+    -
+Gestor de ventas:
+    -Bspwm(~/.config/bspwm/bspwmrc): Tener un i3gaps por si acaso
+    -Sxhkd(~/.config/sxhkd/sxhkdrc):
+    -Picom(~/.config/picom/picom.conf):
+Buscador de archivos:
+    -Rofi(~/.config/rofi/config.rasi):
