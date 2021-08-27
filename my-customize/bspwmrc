@@ -7,6 +7,9 @@
 . "${HOME}/.config/bspwm/autostart.sh"
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+#RULES PROGRAM START
+bspc rule -a discord state=floating rectangle=1200x700+100+100 sticky=on center=true
+#bspc rule -a google-chrome-stable border=false
 
 #bspc config normal_border_color "$color1"
 #bspc config active_border_color "$color2"
@@ -19,7 +22,7 @@ bspc config border_width 0
 #bspc config top_padding 30
 #bspc config left_padding 0
 #bspc config right_padding 0
-#bspc config bottom_padding 0
+bspc config bottom_padding 0
 ##Permite multiplicar las pestañas
 #bspc config split_ratio 0.5b
 #bspc config borderless_monocle true
@@ -36,4 +39,3 @@ bspc config border_width 0
 #bspc rule -a xfce4-popup-whiskermenu state=floating border=off layer=normal
 #bspc rule -a Yad state=floating border=off layer=normal
 #bspc rule -a xfce4-notes floating=on
-

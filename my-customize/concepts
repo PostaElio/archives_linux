@@ -11,3 +11,10 @@ Gestor de ventas:
     -Picom(~/.config/picom/picom.conf):
 Buscador de archivos:
     -Rofi(~/.config/rofi/config.rasi):
+
+Poruduccion:
+    visual sutdio code:
+        sudo pacman -S vscode
+        code
+
+        
