@@ -3,8 +3,8 @@
 #
 
 ####User Application ####
-alt + {b,w,f}
-	{firedragon,garuda-welcome,thunar}
+#alt + {b,w,f}
+#	{firedragon,garuda-welcome,thunar}
 
 # terminal emulator
 super + Return
@@ -13,14 +13,11 @@ super + Return
 # program launcher
 super + d
 #	rofi -modi drun -show drun 
-	rofi -show run
+#	rofi -show run
+	rofi -no-lazy-grab -show drun -modi drun -theme /home/nexer/Documents/practice-code/archives_linux/kde_simplemenu.rasi
 
-super + Escape
-	pkill -USR1 -x sxhkd
-
-#screenShooter
-Print
-	ksnip -fs
+#super + Escape
+#	pkill -USR1 -x sxhkd
 
 #
 # bspwm hotkeys
@@ -35,6 +32,7 @@ super + {_,shift + }BackSpace
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
+# Pone a todas las ventanas en medio full
 super + m
 	bspc desktop -l next
 
@@ -43,20 +41,21 @@ super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest window
+# Cambia de posicion las ventas actuales, nose bien en que orden
 super + g
 	bspc node -s biggest.window
 
 #
 # state/flags
 #
-
+# Cambia el estado de las ventas
 # set the window state
 super + {t,shift + t,s}
 	bspc node -t {tiled,pseudo_tiled,floating}
-Rx
+
 # set the node flags
-super + ctrl + {m,x,y,z}
-	bspc node -g {marked,locked,sticky,private}
+#super + ctrl + {m,x,y,z}
+#	bspc node -g {marked,locked,sticky,private}
 
 # Toggle Fullscreen
 super + f
@@ -66,24 +65,27 @@ super + f
 #
 
 # focus the node in the given direction
+# Seleccion entre ventanas actuales
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+#super + {p,b,comma,period}
+#	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
-super + {_,shift + }c
-	bspc node -f {next,prev}.local.!hidden.window
+# Recorre todas las ventanas actuales
+#super + {_,shift + }c
+#	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
+#super + bracket{left,right}
+#	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
+# Recorrer pantallas
+#super + {grave,Tab}
+#	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
 super + {o,i}
@@ -112,8 +114,8 @@ super + ctrl + space
 	bspc node -p cancel
 
 # cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+#super + ctrl + shift + space
+#	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
 # move/resize
@@ -140,5 +142,41 @@ XF86AudioRaiseVolume
 
 XF86AudioLowerVolume
  pactl set-sink-volume 0 -5%
-super + alt + g 
-	google-chrome-stable
+#super + alt + g 
+#	google-chrome-stable
+#super + alt + c 
+#	code
+#
+#super + alt + d
+#	discord
+#super + alt + Return
+#	thunar
+super + alt + {g,c,d,Return,x,w}
+	{google-chrome-stable,code,discord,thunar,liri-calculator,whatsapp-for-linux}	
+
+super + alt + b
+	~/.config/binance/Binance/binance 
+
+super + alt + t
+	telegram-desktop
+super + alt + i
+	cd /usr/bin/
+	sleep 1
+	./idea
+	#/usr/share/idea/bin/idea.sh
+	#
+#screenShooter
+#Print
+#super + k
+#	flameshot gui
+#	ksnip -fs
+super + alt + e
+	~/eclipse/java-2021-06/eclipse/./eclipse
+super + alt + i
+	/home/nexer/Documents/intellij-portable/bin/./idea.sh
+
+super + alt + s
+	~/.config/cuis-university/./run.sh
+#Duplicaba la ventana actual... no funcionaaa:
+super + shift + Return
+	~/.config/sxhkd/./duplicate.sh

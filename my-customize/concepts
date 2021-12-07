@@ -12,6 +12,8 @@ Gestor de ventas:
 Buscador de archivos:
     -Rofi(~/.config/rofi/config.rasi):
 
+General:
+    -Xfce4(~/.config/xfce4/xfconf/xfce-perchannel-xml/): Archivos para la configuracion
 Poruduccion:
     visual sutdio code:
         sudo pacman -S vscode

@@ -94,9 +94,12 @@ font:
     #
     # Default:
     #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
+    #   - (Linux/BSD) monospac
     #   - (Windows) Consolas
+    #family: /usr/share/fonts/TTF/caca.tff
+    #family: /usr/share/fonts/TTF/Hack"
     family: monospace
+      #family: "Hack"
     #FantasqueSansMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.

@@ -1,7 +1,4 @@
-#Configuracion de la terminal
-#
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
-
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
@@ -35,9 +32,9 @@ window:
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
-  #padding:
-  #  x: 0
-  #  y: 0
+  padding:
+    x: 15
+    y: 15
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
@@ -51,7 +48,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
-  decorations: full
+  decorations: none
 
   # Startup Mode (changes require restart)
   #
@@ -65,20 +62,20 @@ window:
   #startup_mode: Windowed
 
   # Window title
-  title: Alacritty@Garuda
+  #title: Alacritty@Garuda
 
   # Window class (Linux/BSD only):
-  class:
+  #class:
     # Application instance name
-    instance: Alacritty
+    #instance: Alacritty
     # General application class
-    general: Alacritty
+    #general: Alacritty
 
   # GTK theme variant (Linux/BSD only)
   #
   # Override the variant of the GTK theme. Commonly supported values are `dark` and `light`.
   # Set this to `None` to use the default theme variant.
-  gtk_theme_variant: dark
+  #gtk_theme_variant: dark
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -91,18 +88,22 @@ scrolling:
 # Font configuration
 font:
   # Normal (roman) font face
-  size: 9
+  size: 10.5
   normal:
     # Font family
     #
     # Default:
     #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
+    #   - (Linux/BSD) monospac
     #   - (Windows) Consolas
-    family: FantasqueSansMono Nerd Font Mono
+    #family: /usr/share/fonts/TTF/caca.tff
+    #family: /usr/share/fonts/TTF/Hack"
+    family: monospace
+      #family: "Hack"
+    #FantasqueSansMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
-    #style: Regular
+    style: Regular
 
   # Bold font face
   bold:
@@ -110,10 +111,11 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family:  FantasqueSansMono Nerd Font Mono
+    family: monospace
+    #FantasqueSansMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
-    #style: Bold
+    style: Bold
 
   # Italic font face
   italic:
@@ -121,7 +123,8 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family:  FantasqueSansMono Nerd Font Mono
+    family: monospace
+    #FantasqueSansMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
     #style: Italic
@@ -132,26 +135,27 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family:  FantasqueSansMono Nerd Font Mono
+    family: monospace
+    #FantasqueSansMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
     #style: Bold Italic
 
   # Point size
-    size: 9.0
+    size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
-  #offset:
-  #  x: 0
-  #  y: 0
+  offset:
+    x: 0
+    y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
   # increasing `y` moves the glyph upwards.
-  #glyph_offset:
-  #  x: 0
-  #  y: 0
+  glyph_offset:
+    x: 0
+    y: 0
 
   # Thin stroke font rendering (macOS only)
   #
@@ -278,7 +282,7 @@ draw_bold_text_with_bright_colors: true
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.6
+background_opacity: 0.7
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -327,7 +331,7 @@ live_config_reload: true
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /usr/bin/fish
+  program: /usr/bin/zsh
   args:
     - --login
 
@@ -543,16 +547,16 @@ mouse:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # at once.
-key_bindings:
-    # (Windows, Linux, and BSD only)
-  - { key: V,        mods: Control|Shift, action: Paste            }
-  - { key: C,        mods: Control|Shift, action: Copy             }
-  - { key: Insert,   mods: Shift,         action: PasteSelection   }
-  - { key: Key0,     mods: Control,       action: ResetFontSize    }
-  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
-  - { key: Plus,     mods: Control,       action: IncreaseFontSize }
-  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
-  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+#key_bindings:
+#    # (Windows, Linux, and BSD only)
+#  - { key: V,        mods: Control|Shift, action: Paste            }
+#  - { key: C,        mods: Control|Shift, action: Copy             }
+#  - { key: Insert,   mods: Shift,         action: PasteSelection   }
+#  - { key: Key0,     mods: Control,       action: ResetFontSize    }
+#  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
+#  - { key: Plus,     mods: Control,       action: IncreaseFontSize }
+#  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+#  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
 
 
 #debug:
@@ -577,52 +581,88 @@ key_bindings:
   #print_events: false
 
 # Custom colorscheme fitting Sweetified theme
+#colors:
+#  primary:
+#    background: '0x0a1124'
+#    foreground: '0xeec49a'
+#  cursor:
+#    text:       '0x0a1124'
+#    cursor:     '0xeec49a'
+#  normal:
+#    black:      '0x0a1124'
+#    red:        '0x5F4149'
+#    green:      '0xEB3247'
+#    yellow:     '0xBC4349'
+#    blue:       '0xF35645'
+#    magenta:    '0xF6A73B'
+#    cyan:       '0xFAD32F'
+#    white:      '0xeec49a'
+#  bright:
+#    black:      '0xa6896b'
+#    red:        '0x5F4149'
+#    green:      '0xEB3247'
+#    yellow:     '0xBC4349'
+#    blue:       '0xF35645'
+#    magenta:    '0xF6A73B'
+#    cyan:       '0xFAD32F'
+#    white:      '0xeec49a'
+#colors:
+#  primary:
+#    background: '0x0C0201'
+#    foreground: '0xebb2b7'
+#  cursor:
+#    text:       '0x0C0201'
+#    cursor:     '0xebb2b7'
+#  normal:
+#    black:      '0x0C0201'
+#    red:        '0x0E0A4B'
+#    green:      '0xBD5758'
+#    yellow:     '0xB48D62'
+#    blue:       '0xC39D60'
+#    magenta:    '0xF7877E'
+#    cyan:       '0xDE6C82'
+#    white:      '0xebb2b7'
+#  bright:
+#    black:      '0xa47c80'
+#    red:        '0x0E0A4B'
+#    green:      '0xBD5758'
+#    yellow:     '0xB48D62'
+#    blue:       '0xC39D60'
+#    magenta:    '0xF7877E'
+#    cyan:       '0xDE6C82'
+#    white:      '0xebb2b7'
+#
 colors:
   primary:
-    background: '0x0a1124'
-    foreground: '0xeec49a'
+    #background:  '0x181b28'
+    background:  '0x000000'
+    foreground:  '0xf7f7f7'
+ 
+#    dim_foreground:  '0x181b28'
+    bright_foreground:  '0xffffff'
+#    dim_background:  '0xf7f7f7'
+    bright_background:  '0x808080'
+ 
   cursor:
-    text:       '0x0a1124'
-    cursor:     '0xeec49a'
+    text:  '0x2c2c2c'
+    cursor:  '0xd9d9d9'
+ 
   normal:
-    black:      '0x0a1124'
-    red:        '0x5F4149'
-    green:      '0xEB3247'
-    yellow:     '0xBC4349'
-    blue:       '0xF35645'
-    magenta:    '0xF6A73B'
-    cyan:       '0xFAD32F'
-    white:      '0xeec49a'
+    black:  '0x232f44'
+    red:  '0xed1515'
+    green:  '0x08d15c'
+    yellow:  '0xf67400'
+    blue:  '0x1d99f3'
+    magenta:  '0x8e44ad'
+    cyan:  '0x1abc9c'
+    white:  '0xb3b3be'
+ 
   bright:
-    black:      '0xa6896b'
-    red:        '0x5F4149'
-    green:      '0xEB3247'
-    yellow:     '0xBC4349'
-    blue:       '0xF35645'
-    magenta:    '0xF6A73B'
-    cyan:       '0xFAD32F'
-    white:      '0xeec49a'colors:
-  primary:
-    background: '0x0C0201'
-    foreground: '0xebb2b7'
-  cursor:
-    text:       '0x0C0201'
-    cursor:     '0xebb2b7'
-  normal:
-    black:      '0x0C0201'
-    red:        '0x0E0A4B'
-    green:      '0xBD5758'
-    yellow:     '0xB48D62'
-    blue:       '0xC39D60'
-    magenta:    '0xF7877E'
-    cyan:       '0xDE6C82'
-    white:      '0xebb2b7'
-  bright:
-    black:      '0xa47c80'
-    red:        '0x0E0A4B'
-    green:      '0xBD5758'
-    yellow:     '0xB48D62'
-    blue:       '0xC39D60'
-    magenta:    '0xF7877E'
-    cyan:       '0xDE6C82'
-    white:      '0xebb2b7'
+    black:  '0x7f8c8d'
+    red:  '0xc0392b'
+    green:  '0x1cdc9a'
+    yellow:  '0xfdbc4b'
+    blue:  '0x3daee9'
+    magenta:  '0xc50ed2'
+    cyan:  '0x17ab8e'
+    white:  '0xffffff' 
